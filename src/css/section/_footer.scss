@@ -1,0 +1,59 @@
+footer {
+	background-color: $rb-primary-clr;
+	padding: 2rem;
+	@media only screen and (max-width: 767px) {
+		padding: 0;
+	}
+	.footer-nav {
+		margin-top: 4rem;
+		@media only screen and (max-width: 767px) {
+			margin: 0;
+		}
+
+		.navbar-nav {
+
+			.nav-item {
+
+				.nav-link {
+					font-size: 1.125rem;
+					font-family: 'century_gothicbold';
+					color: $white;
+					padding-right: 2rem;
+				}
+			}
+			@media only screen and (max-width: 767px) {
+				flex-direction: column;
+			}
+		}
+	}
+	.footer-text {
+		color: $white;
+		font-family: 'century_gothicbold';
+		p {
+			font-size: 1.125rem;
+			font-family: 'century_gothicbold';
+		}
+		a{
+			color: $white;
+		}
+		&.-mt {
+			margin-top: 3rem;
+			padding-left: 1rem;
+			@media only screen and (max-width: 767px) {
+				margin: 0;
+				padding: 0;
+			}
+		}
+		i.icon-envelope-alt {
+			font-size: 3rem;
+			vertical-align: middle;
+			padding-right: 1rem;
+		}
+		.social-links a {
+			font-size: 3rem;
+			color: $white;
+			padding-right: 2rem;
+			text-decoration: none;
+		}
+	}
+}

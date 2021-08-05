@@ -1,0 +1,17 @@
+@import 'liferay-font-awesome/scss/font-awesome';
+@import 'liferay-font-awesome/scss/glyphicons';
+
+@import "partials/fonts";
+
+.digitalplace-microsite-wrapper {
+	@import 'mixins/pallette';
+	@import 'mixins/button';
+
+	@import 'section/header';
+	@import 'section/footer';
+	@import 'section/basic-component';
+
+	@import "partials/typography";
+}
+
+@import 'partials/wrapper';

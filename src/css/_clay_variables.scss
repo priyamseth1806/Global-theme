@@ -1,0 +1,20 @@
+$rb-primary-clr: #60b3b6 !default;
+$rb-primary-clr2: #ffcf21 !default;
+$rb-primary-clr3: #aec781 !default;
+$rb-primary-clr4: #65783e !default;
+$rb-primary-clr5: #980035 !default;
+$rb-primary-clr6: #6d8e9e !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+	(
+		"primary":    $rb-primary-clr,
+		"secondary":  $rb-primary-clr6,
+		"success":    $rb-primary-clr4,
+		"info":       $rb-primary-clr3,
+		"warning":    $rb-primary-clr2,
+		"danger":     $rb-primary-clr5,
+	),
+	$theme-colors
+);

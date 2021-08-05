@@ -1,0 +1,153 @@
+header{
+	.site-logo{
+		img{
+			max-width: 12.5rem;
+			height: auto;
+			@media only screen and (max-width: 767px) {
+				max-width: 5.5rem;
+			}
+		}
+	}
+	.navbar{
+		padding-top: 3rem;
+		padding-bottom: 0;
+		@media only screen and (max-width: 767px) {
+			padding-top: 1rem;
+		}
+		.nav-right{
+			width: 100%;
+			.quick-links{
+				display: flex;
+				justify-content: flex-end;
+				@media only screen and (max-width: 767px) {
+					display: block;
+				}
+				ul{
+					li.nav-item{
+						.nav-link{
+							color: $grey;
+							font-size: 1rem;
+							font-family: 'century_gothicbold';
+							padding-right: 1.3rem;
+							@media only screen and (max-width: 767px) {
+								font-size: 0.9rem;
+								padding-right: 0.5rem;
+							}
+						}
+					}
+				}
+			}
+			.digitalplace-search {
+				.search-bar {
+					.search-bar-keywords-input-wrapper {
+						min-width: auto;
+						.search-bar-keywords-input {
+							width: 0;
+							border: 0.125rem solid transparent;
+							background-color: transparent;
+							color: transparent;
+							font-size: 1.2em;
+							-webkit-transition: all 0.8s;
+							transition: all 0.8s;
+							margin-bottom: 0;
+							position: relative;
+							&:focus {
+								border-radius: 3.125rem 0 0 3.125rem;
+								border: 0.063rem solid rgba($grey, $alpha: 0.5);
+								background-color: transparent;
+								width: 21.875rem;
+								color: $black;
+								left: 0;
+								@media only screen and (max-width: 767px) {
+									width: 5rem;
+								}
+							}  
+						}
+						.input-group-inset-item {
+							border: none;
+							border-radius: 0.313rem;
+							height: 2.375rem;
+							transition: all 0.5s;
+							button {
+								font-size: 1.5rem;
+								padding: 0;
+							}
+						}
+						button {
+							background: none;
+							width: 3.125rem;
+							position: relative;
+							left: 0;
+							margin-bottom: 0;
+							border-radius: 0.188rem;
+						}
+					}
+				}
+			}
+			.navbar-collapse {
+				justify-content: center;
+
+				.digitalplace-nav-head {
+					padding-top: 1.9rem;
+					padding-right: 5rem;
+					
+					ul.navbar-nav {
+						li.nav-item {
+							margin-right: 3rem;
+							a {
+								color: $black;
+								font-size: 1.125rem;
+								padding: 0.7rem 0.5rem;
+								.lfr-nav-child-toggle {
+									display: none;
+								}
+								&:hover {
+									background-color: $rb-primary-clr;
+									color: $white;
+								}
+								@media only screen and (max-width: 767px) {
+									color: $white;
+									padding: 0.3rem 0.5rem;
+								}
+							}
+							&.hover,
+							&.open {
+								a {
+									background-color: $rb-primary-clr;
+									color: $white;
+								}
+								ul.child-menu.dropdown-menu {
+									margin-top: 0;
+									border-radius: 0;
+									background: $rb-primary-clr;
+									border: none;
+									min-width: 15rem;
+								}
+							}
+						}
+					}
+					.portlet {
+						margin: 0;
+					}
+				
+				}
+			}
+			@media only screen and (max-width: 767px) {
+
+				.navbar-toggler {
+					position: absolute;
+					top: 0.938rem;
+					right: 0.625rem;
+				}
+
+				.digialplace-main-nav {
+					position: absolute;
+					background: rgb(96, 179, 182);
+					right: 0;
+					z-index: 999;
+					top: 3.25rem;
+				}
+			}
+		}
+	}
+}

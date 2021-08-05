@@ -1,0 +1,53 @@
+.btn-primary, .btn-primary1{
+	background-color: $rb-primary-clr;
+	border-color: $rb-primary-clr;
+	color: $white;
+}
+.btn-primary2{
+	background-color: $rb-primary-clr2;
+	border-color: $rb-primary-clr2;
+	color: $white;
+}
+
+.btn-primary3{
+	background-color: $rb-primary-clr3;
+	border-color: $rb-primary-clr3;
+	color: $white;
+}
+.btn-primary4{
+	background-color: $rb-primary-clr4;
+	border-color: $rb-primary-clr4;
+	color: $white;
+}
+.btn-primary5{
+	background-color: $rb-primary-clr5;
+	border-color: $rb-primary-clr5;
+	color: $white;
+}
+.btn-primary6{
+	background-color: $rb-primary-clr6;
+	border-color: $rb-primary-clr6;
+	color: $white;
+}
+
+.btn-outline-primary {
+    color: $rb-primary-clr;
+    border-color: $rb-primary-clr;
+	&:hover{
+		background-color: $rb-primary-clr;
+		border-color: $rb-primary-clr;
+		color: $white;
+	}
+}
+.btn-outline-secondary{
+	color: $grey;
+    border-color: $grey;
+	&:hover{
+		background-color: $grey;
+		border-color: $grey;
+		color: $white;
+	}
+}
+.btn-link{
+	color: $rb-secondary-clr4;
+}
