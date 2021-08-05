@@ -1,0 +1,13 @@
+.DS_Store
+.gradle
+.project
+.settings
+.web_bundle_build
+.yo-rc.json
+
+build
+dist
+liferay-theme.json
+node
+node_modules
+

@@ -1,0 +1,92 @@
+buildscript {
+
+	repositories {
+
+		mavenLocal()
+
+		maven {
+
+			url "${artefact_repository_base_url}/${artefact_repository_global_repository}"
+
+			credentials {
+				username = "${ artefact_repository_user }"
+				password = "${ artefact_repository_password }"
+			}
+
+		}
+
+	}
+
+	dependencies {
+		classpath group: 'com.liferay', name: 'com.liferay.gradle.plugins', version: '11.0.59'
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.gulp", version: "2.0.38"
+	}
+
+
+}
+
+apply plugin: 'com.liferay.gulp'
+apply plugin: 'maven-publish'
+
+node {
+	nodeVersion = '11.2.0'
+	nodeDir = './node'
+}
+
+def projectName;
+
+task setProjectGroupIdAndVersion() {
+
+	def File packageFile = file("package.json")
+
+	if (!packageFile.exists()) {
+		throw new GradleException("Unable to find package.json at " + packageFile().getAbsolutePath())
+	}
+
+	def packageJSON = new groovy.json.JsonSlurper().parseText(packageFile.text)
+	projectName = packageJSON.name
+	project.group(packageJSON.groupId)
+	project.version(packageJSON.version)
+
+	logger.info "Project name: $projectName, group: $project.group, version: $project.version"
+
+}
+
+publish.dependsOn(setProjectGroupIdAndVersion)
+publishToMavenLocal.dependsOn(setProjectGroupIdAndVersion)
+
+def releaseRepository = "${ artefact_repository_release_repository }";
+def snapshotRepository = "${ artefact_repository_snapshot_repository }";
+def repositoryKey = version.contains('-SNAPSHOT') ? snapshotRepository : releaseRepository;
+
+publishing {
+
+	publications {
+
+		projectPublication(MavenPublication) {
+			artifactId projectName
+			artifact 'dist/' + projectName + '.war'
+			pom.withXml {
+				def dependency = asNode().appendNode('dependencies').appendNode('dependency')
+				dependency.appendNode('groupId', project.group)
+				dependency.appendNode('artifactId', project.name)
+				dependency.appendNode('version', project.version)
+			}
+		}
+	}
+
+	repositories {
+
+		maven {
+			url = "${ artefact_repository_base_url }/${ repositoryKey }"
+
+			credentials {
+				username "${ artefact_repository_user }"
+				password "${ artefact_repository_password }"
+			}
+
+		}
+
+	}
+
+}
