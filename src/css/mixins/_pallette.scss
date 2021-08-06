@@ -1,15 +1,46 @@
-$rb-primary-clr:#60b3b6;
-$rb-primary-clr2 :#ffcf21;
-$rb-primary-clr3: #aec781;
-$rb-primary-clr4: #65783e;
-$rb-primary-clr5: #980035;
-$rb-primary-clr6: #6d8e9e;
 
-$rb-secondary-clr1: #da3771;
-$rb-secondary-clr2: #6a4664;
-$rb-secondary-clr3: #e40520;
-$rb-secondary-clr4: #00628f;
+$digitalplace-theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$digitalplace-theme-colors: map-merge(
+  (
+    "primary-clr":      $rb-primary-clr,
+    "primary-clr2":     $rb-primary-clr2,
+    "primary-clr3":     $rb-primary-clr3,
+    "primary-clr4":     $rb-primary-clr4,
+    "primary-clr5":     $rb-primary-clr5,
+    "primary-clr6":     $rb-primary-clr6,
+    "secondary-clr1":   $rb-secondary-clr1,
+    "secondary-clr2":   $rb-secondary-clr2,
+    "secondary-clr3":   $rb-secondary-clr3,
+    "secondary-clr4":   $rb-secondary-clr4,
+    "black":            $black,
+    "grey":             $grey,
+    "white":            $white
+  ),
+  $digitalplace-theme-colors
+);
 
-$black: #000000;
-$grey: #666666;
-$white: #ffffff;
+
+// Contextual backgrounds
+@mixin color-variant($parent, $color) {
+    #{$parent} {
+        background-color: $color !important;
+    }
+}
+
+// Contextual Text Color
+@mixin color-text-variant($parent, $color) {
+    #{$parent} {
+        color: $color !important;
+    }
+}
+
+/** Background Color Util Classes */
+@each $color, $value in $digitalplace-theme-colors {
+    @include color-variant(".bg-clr-#{$color}", $value);
+}
+
+/** Typographic Color Util Classes */
+@each $color, $value in $digitalplace-theme-colors {
+    @include color-text-variant(".text-#{$color}", $value);
+}

@@ -1,3 +1,36 @@
+p{
+	font-family: $paragraph-font-family;
+	font-size: 1rem;
+}
+
+strong{
+	font-family: $strong-font-family;
+}
+
+h1{
+	font-family: $h1-font-family;
+}
+
+h2{
+	font-family: $h2-font-family;
+}
+
+h3{
+	font-family: $h3-font-family;
+}
+
+h4{
+	font-family: $h4-font-family;
+}
+
+h5{
+	font-family: $h5-font-family;
+}
+
+h6{
+	font-family: $h6-font-family;
+}
+
 .component-image {
     max-height: 40rem;
 }

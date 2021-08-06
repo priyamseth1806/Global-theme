@@ -1,0 +1,55 @@
+/**
+    Root 
+*/
+:root{
+    --rb-primary-clr:#60b3b6;
+    --rb-primary-clr2 :#ffcf21;
+    --rb-primary-clr3: #aec781;
+    --rb-primary-clr4: #65783e;
+    --rb-primary-clr5: #980035;
+    --rb-primary-clr6: #6d8e9e;
+    --rb-secondary-clr1: #da3771;
+    --rb-secondary-clr2: #6a4664;
+    --rb-secondary-clr3: #e40520;
+    --rb-secondary-clr4: #00628f;
+    --rb-black: #000000;
+    --rb-grey: #666666;
+    --rb-white: #ffffff;
+    --rb-primary-regular:   "century_gothicregular";
+    --rb-primary-bold:      "century_gothicbold";
+    --rb-primary-italic:    "century_gothicitalic";
+}
+
+/**
+    Color
+*/
+$rb-primary-clr:    var(--rb-primary-clr);
+$rb-primary-clr2:   var(--rb-primary-clr2);
+$rb-primary-clr3:   var(--rb-primary-clr3);
+$rb-primary-clr4:   var(--rb-primary-clr4);
+$rb-primary-clr5:   var(--rb-primary-clr5);
+$rb-primary-clr6:   var(--rb-primary-clr6);
+$rb-secondary-clr1: var(--rb-secondary-clr1);
+$rb-secondary-clr2: var(--rb-secondary-clr2);
+$rb-secondary-clr3: var(--rb-secondary-clr3);
+$rb-secondary-clr4: var(--rb-secondary-clr4);
+$black:             var(--rb-black);
+$grey:              var(--rb-grey);
+$white:             var(--rb-white);
+
+/**
+    Typography 
+*/
+$primary-regular:   var(--rb-primary-regular);
+$primary-bold:      var(--rb-primary-bold);
+$primary-italic:    var(--rb-primary-italic);
+
+$paragraph-font-family: $primary-regular; 
+$strong-font-family: $primary-bold;
+$h1-font-family: $primary-bold;
+$h2-font-family: $primary-bold;
+$h3-font-family: $primary-bold;
+$h4-font-family: $primary-bold;
+$h5-font-family: $primary-bold;
+$h6-font-family: $primary-bold;
+
